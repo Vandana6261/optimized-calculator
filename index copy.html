@@ -1,0 +1,569 @@
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Optimize Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="head">
+        <input type="text" id="inputText" />
+        <div class="result">h</div>
+      </div>
+      <div class="container">
+        <button>^</button>
+        <button>/</button>
+        <button>*</button>
+        <button>-</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>+</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>Back</button>
+        <button>0</button>
+        <button>.</button>
+        <button>Enter</button>
+        <button>Clear</button>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html> -->
+
+
+
+
+
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Glass Calculator</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* Vibrant Gradient Background */
+            background: linear-gradient(45deg, #ff0057, #e91e63, #9c27b0, #673ab7);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Calculator Container */
+        .calculator {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 30px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+            width: 320px;
+        }
+
+        /* Display Screen */
+        .display {
+            width: 100%;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            outline: none;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            color: #fff;
+            text-align: right;
+            padding: 10px 20px;
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        /* Buttons Grid */
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        button {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            transition: 0.3s;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        /* Special Button Colors */
+        .operator {
+            background: rgba(255, 165, 0, 0.6); /* Orange */
+        }
+
+        .clear {
+            background: rgba(255, 69, 58, 0.6); /* Red */
+        }
+
+        .equal {
+            background: rgba(52, 199, 89, 0.6); /* Green */
+            grid-column: span 2;
+            width: 132px;
+            border-radius: 30px;
+        }
+
+        button:active {
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <input type="text" class="display" id="screen" placeholder="0" disabled>
+        <div class="buttons">
+            <button class="clear">C</button>
+            <button class="operator">/</button>
+            <button class="operator">*</button>
+            <button class="operator">⌫</button>
+
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="operator">-</button>
+
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="operator">+</button>
+
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>.</button>
+
+            <button>0</button>
+            <button class="equal">=</button>
+        </div>
+    </div>
+
+</body>
+</html> -->
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Modern Calculator</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-main: #f8fafc;
+            --btn-hover: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+        }
+
+        .calc-container {
+            width: 350px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .screen {
+            width: 100%;
+            height: 100px;
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            text-align: right;
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            outline: none;
+            letter-spacing: -1px;
+        }
+
+        .screen::placeholder {
+            color: #475569;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        button {
+            aspect-ratio: 1/1;
+            border-radius: 20px;
+            border: none;
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-main);
+            font-size: 1.2rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button:hover {
+            background: var(--btn-hover);
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        /* Accent Styles */
+        .op-btn {
+            color: var(--accent-color);
+            background: rgba(56, 189, 248, 0.05);
+            font-size: 1.5rem;
+        }
+
+        .equal-btn {
+            background: var(--accent-color);
+            color: #000;
+            font-weight: 700;
+        }
+
+        .equal-btn:hover {
+            background: #7dd3fc;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+        }
+
+        .clear-btn {
+            color: #f87171;
+            background: rgba(248, 113, 113, 0.05);
+        }
+
+        /* Scannable info for professional feel */
+        .brand {
+            text-align: center;
+            color: #475569;
+            font-size: 0.7rem;
+            margin-top: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calc-container">
+        <input type="text" class="screen" placeholder="0" disabled>
+        
+        <div class="grid">
+            <button class="clear-btn">AC</button>
+            <button class="op-btn">±</button>
+            <button class="op-btn">%</button>
+            <button class="op-btn">÷</button>
+
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="op-btn">×</button>
+
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="op-btn">−</button>
+
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="op-btn">+</button>
+
+            <button style="grid-column: span 2; aspect-ratio: auto;">0</button>
+            <button>.</button>
+            <button class="equal-btn">=</button>
+        </div>
+
+        <div class="brand">Precision Pro</div>
+    </div>
+
+</body>
+</html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon-Glow Glass Calculator</title>
+    <style>
+        /* Define Neon Colors */
+        :root {
+            --neon-pink: #ff007b;
+            --neon-blue: #00eaff;
+            --neon-purple: #8e00ff;
+            --dark-bg: #0d0d1a;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --border-color: rgba(255, 255, 255, 0.15);
+            --text-color: #e0e0e0;
+            --shadow-color-1: rgba(0, 234, 255, 0.4); /* Blue glow */
+            --shadow-color-2: rgba(255, 0, 123, 0.4); /* Pink glow */
+        }
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Orbitron', sans-serif; /* A sci-fi / futuristic font */
+        }
+
+        /* Body & Background Animation */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: var(--dark-bg);
+            overflow: hidden; /* Prevent scrollbar from background animation */
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg at 50% 50%, 
+                        var(--neon-blue) 0%, 
+                        var(--neon-pink) 25%, 
+                        var(--neon-purple) 50%, 
+                        var(--neon-blue) 75%, 
+                        var(--neon-pink) 100%);
+            animation: rotateBackground 20s linear infinite;
+            filter: blur(100px) opacity(0.3); /* Subtle, glowing background blur */
+            z-index: -1;
+        }
+
+        @keyframes rotateBackground {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Calculator Container */
+        .calculator {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px); /* Stronger blur for glass effect */
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            width: 340px;
+            position: relative;
+            z-index: 1; /* Ensure calculator is above background */
+        }
+
+        /* Display Screen */
+        .display {
+            width: 100%;
+            height: 80px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            color: var(--text-color);
+            text-align: right;
+            padding: 15px 20px;
+            font-size: 2.5em; /* Larger, more impactful font */
+            font-weight: 400;
+            outline: none;
+            box-shadow: inset 0 0 15px rgba(0, 234, 255, 0.2); /* Inner blue glow */
+            text-shadow: 0 0 8px var(--neon-blue); /* Text glow */
+            letter-spacing: 1px;
+            overflow: hidden; /* Hide overflow during animation */
+        }
+
+        /* Button Grid */
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        button {
+            height: 65px;
+            width: 65px;
+            border-radius: 50%; /* Circular buttons */
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 1.3em;
+            font-weight: 600;
+            color: var(--text-color);
+            background: var(--glass-bg);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth transition */
+            position: relative;
+            overflow: hidden;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Subtle white text glow */
+        }
+
+        /* Button Hover Animation (Neon Pulse) */
+        button:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 0 20px var(--shadow-color-1), 0 0 30px var(--shadow-color-2); /* Dual color glow */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        button:active {
+            transform: scale(0.95);
+            box-shadow: inset 0 0 10px rgba(0, 234, 255, 0.5), inset 0 0 15px rgba(255, 0, 123, 0.5); /* Inner active glow */
+        }
+
+        /* Operator Buttons */
+        .operator {
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+            font-size: 1.5em;
+        }
+        .operator:hover {
+            box-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+        }
+
+        /* Clear Button */
+        .clear {
+            color: var(--neon-pink);
+            text-shadow: 0 0 10px var(--neon-pink);
+        }
+        .clear:hover {
+            box-shadow: 0 0 20px var(--neon-pink), 0 0 30px var(--neon-pink);
+        }
+
+        /* Equal Button */
+        .equal {
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+            color: var(--dark-bg); /* Dark text for contrast */
+            font-weight: 700;
+            grid-column: span 2; /* Spans two columns */
+            width: unset; /* Override default width */
+            border-radius: 35px; /* Pill shape */
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+            text-shadow: none; /* Remove default text shadow */
+        }
+        .equal:hover {
+            transform: translateY(-5px) scale(1.03);
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple), var(--neon-pink)); /* Re-apply gradient */
+            box-shadow: 0 0 30px var(--shadow-color-1), 0 0 40px var(--shadow-color-2); /* Stronger glow */
+        }
+
+        /* Small number 0 for better layout */
+        .zero-button {
+            grid-column: span 2;
+            width: unset;
+            border-radius: 35px;
+        }
+
+        /* Font Imports (optional, but good for style consistency) */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap');
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <input type="text" class="display" id="screen" placeholder="0" disabled>
+        <div class="buttons">
+            <button class="clear">C</button>
+            <button class="operator">±</button>
+            <button class="operator">%</button>
+            <button class="operator">/</button>
+
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="operator">*</button>
+
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="operator">-</button>
+
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="operator">+</button>
+
+            <button class="zero-button">0</button>
+            <button>.</button>
+            <button class="equal">=</button>
+        </div>
+    </div>
+
+</body>
+</html>
