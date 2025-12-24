@@ -22,7 +22,6 @@
 
 
 function startCalculation(arr) {
-  // 5 + 5 * 3 / 3 => 5 + 15 / 3 => 5 + 5 => 10
   let operatorStack = [];
   let operandStack = [];
   for (let i = 0; i < arr.length; i++) {
@@ -30,29 +29,24 @@ function startCalculation(arr) {
     // if the val is numeric value
     if (!operatorsArr.includes(arr[i])) {
       operandStack.push(arr[i]);
-    //   console.log(operandStack)
     } else {
       if (
         operandStack.length == 0 ||
-        mp.get(arr[i]) > mp.get(operatorStack[operandStack.length - 1])
+        mp.get(arr[i]) > mp.get(operatorStack[operatorStack.length - 1])
         ) {
         operatorStack.push(arr[i]);
-        // console.log(operatorStack)
       } else {
         while (
           operatorStack.length > 0 ||
           mp.get(arr[i]) <= mp.get(operatorStack[operatorStack.length - 1])
         ) {
-            // console.log("46 line")
           let operand1 = operandStack.pop();
           let operand2 = operandStack.pop();
           let operator = operatorStack.pop();
           let result = calculate(operand1, operand2, operator);
-        //   console.log(result)
           operandStack.push(result);
         }
         operatorStack.push(arr[i]);
-        console.log(operatorStack, "55")
       }
     }
   }
@@ -94,15 +88,13 @@ const mp = new Map([
   ["-", 1],
 ]);
 
-
-
 let operatorsArr = ["*", "/", "+", "-", "^"];
 
-let hello = "34+9/3";
+let hello = "10-3/4";
 let arr = [];
 let num;
 for(let i=0; i<hello.length; i++) {
-    if(!isNaN(hello[i])) {
+    if(!isNaN(hello[i]) || hello[i] == ".") {
         if(typeof num === "undefined") num = hello[i];
         else num = num + hello[i];
     } 
@@ -116,7 +108,7 @@ for(let i=0; i<hello.length; i++) {
     if(i == hello.length - 1) if(!isNaN(hello[i])) arr.push(hello[i])
 }
 if(isNaN(arr[arr.length - 1])) arr.pop();
-// console.log(arr)
+console.log(arr)
 console.log(startCalculation(arr))
 
 
