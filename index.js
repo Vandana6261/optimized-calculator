@@ -1,13 +1,27 @@
 let input = document.getElementById("inputText");
 let result = document.getElementById("result");
-let container = document.getElementById("container");
+let container = document.querySelector(".container");
 let main = document.getElementById("main");
 let enter = document.getElementById("enter");
+let button = document.querySelectorAll("button")
+
+let filter_val = ["enter", "back", "clear"];
+
+console.log(button)
+console.log(container)
+container.addEventListener("click", (e) => {
+  let clickedVal = e.target.textContent;
+  if(!filter_val.includes(clickedVal.toLowerCase())) {
+    input.value += clickedVal;
+  }
+})
+
 
 
 
 enter.addEventListener("click", () => {
   let val = input.value;
+  console.log(val)
 //   let reg = /^(?=.*\d)(?!.*[+\-*^./]{2})[0-9+\-*^./]+$/g;
   let reg = /^(?=.*\d)(?!.*[+\-*^./]{2})[0-9+\-*^./\s]+$/;
 
@@ -18,6 +32,7 @@ enter.addEventListener("click", () => {
   console.log(val);
   let arrOfEquation = strToArr(val);
   console.log(new Solve().startCalculation(arrOfEquation))
+  console.log(arrOfEquation)
 
 });
 
@@ -110,8 +125,8 @@ function strToArr(str) {
             }
             arr.push(str[i]);
         }
-        if(i == str.length - 1 && !isNaN(str[i])) arr.push(str[i])
-    }
+        if(i == str.length - 1 && !isNaN(str[i])) arr.push(num)
+      }
     return arr;
 }
 
