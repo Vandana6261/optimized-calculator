@@ -4,22 +4,38 @@ let container = document.querySelector(".container");
 let main = document.getElementById("main");
 let enter = document.getElementById("enter");
 let button = document.querySelectorAll("button");
+let history = document.getElementById("history")
+let historyDiv = document.getElementById("history-div")
 
 let filter_val = ["Enter", "Backspace", "Delete"];
 let regex = /[-*+.\/0-9^]/g;
 // console.log(button)
 // console.log(container)
 
+document.addEventListener("keydown", (e) => {
+  if(filter_val.includes(e.key) || e.key.match(regex)) {
+    if(e.key === "Enter") {
+      Enter();
+    } else if(e.key === "Delete") {
+      Clear();
+    }
+  }
+})
+
+let historyArr = JSON.parse(localStorage.getItem("history")) || {}
+
 container.addEventListener("click", (e) => {
   let clickedVal = e.target.textContent;
-    if(clickedVal == "Enter") {
+    if(clickedVal === "Enter") {
       Enter();
     }
-    else if(clickedVal == "Back") {
+    else if(clickedVal === "Back") {
       Back();
     }
-    else if(clickedVal == "Clear") {
+    else if(clickedVal === "Clear") {
       Clear();
+    }  else if(clickedVal === "History"){
+      History();
     } else {
       input.value += clickedVal;
     }
@@ -27,6 +43,10 @@ container.addEventListener("click", (e) => {
 });
 
 enter.addEventListener("click", Enter);
+history.addEventListener("click", () => {
+  historyDiv.classList.toggle("hidden");
+  History();
+})
 
 function Enter() {
   console.log("Enter fun called")
@@ -41,24 +61,29 @@ function Enter() {
     }
     console.log(val);
     let arrOfEquation = strToArr(val);
-    console.log(new Solve().startCalculation(arrOfEquation));
     let op = new Solve().startCalculation(arrOfEquation);
     result.textContent = op;
+    
+    historyArr[val] = op;
+    if(historyArr.length > 10) {
+      historyArr.shift();
+    }
+    localStorage.setItem("history", JSON.stringify(historyArr));
+
 }
 
-document.addEventListener("keyup", (e) => {
-  if(filter_val.includes(e.key) || e.key.match(regex)) {
-    if(e.key === "Enter") {
-      Enter();
-    } else if(e.key === "Backspace") {
-      Back();
-    } else if(e.key === "Delete") {
-      Clear();
-    } else {
-      input.value += e.key;
-    }
+function History() {
+  historyDiv.textContent = "";
+  let hisArr = JSON.parse(localStorage.getItem("history"))
+  for (const key in hisArr) {
+    console.log(key, " = ", hisArr[key])
+    const para = document.createElement("p")
+    para.textContent = `${key} =  ${hisArr[key]}`
+    historyDiv.appendChild(para);
   }
-})
+}
+
+
 
 function Clear() {
   input.value = "";
@@ -144,6 +169,8 @@ class Solve {
     }
   }
 }
+
+
 
 // const solve = new Solve(arr);
 // console.log(solve.startCalculation(arr));
