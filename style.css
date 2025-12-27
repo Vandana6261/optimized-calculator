@@ -21,13 +21,20 @@ body {
   height: 100vh;
   width: 100vw;
   display: flex;
-  justify-content: center;
+  gap: 2rem;
+  justify-content: space-between;
   align-items: center;
   background: linear-gradient(135deg, var(--dark-bg), rgb(61, 65, 63));
 }
 
-.main {
+body > div {
+  flex: 1;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
@@ -39,8 +46,7 @@ body {
   /* background-color: rgb(202, 170, 170); */
 }
 
-.head {
-}
+
 input {
   width: 25vw;
   padding: 1rem;
@@ -86,5 +92,30 @@ button:hover {
 }
 
 #enter {
-  /* grid-column: 3/5; */
+  grid-column: 3/5;
+}
+
+#history {
+  padding: 1.5rem;
+}
+
+.his-container {
+  gap: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+#history-div {
+  border: 1px solid black;
+  padding: 1.5rem;
+  
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+  background: transparent;
+
 }
