@@ -18,27 +18,42 @@ document.addEventListener("keydown", (e) => {
       Enter();
     } else if(e.key === "Delete") {
       Clear();
-    }
+    } 
+
   }
 })
 
 let historyArr = JSON.parse(localStorage.getItem("history")) || {}
 
 container.addEventListener("click", (e) => {
+  let element = e.target.tagName;
   let clickedVal = e.target.textContent;
-    if(clickedVal === "Enter") {
-      Enter();
+    if(element == "BUTTON") 
+    {
+      console.log(element)
+    console.log(clickedVal)
+      if(clickedVal === "Enter") 
+      {
+        Enter();
+      }
+      else if(clickedVal === "Back") 
+      {
+        Back();
+      }
+      else if(clickedVal === "Clear") 
+      {
+        Clear();
+      }  
+      else if(clickedVal === "History")
+      {
+        History();
+      } 
+      else 
+      {
+        input.value += clickedVal;
+      }
     }
-    else if(clickedVal === "Back") {
-      Back();
-    }
-    else if(clickedVal === "Clear") {
-      Clear();
-    }  else if(clickedVal === "History"){
-      History();
-    } else {
-      input.value += clickedVal;
-    }
+    
   // }
 });
 
@@ -76,7 +91,6 @@ function History() {
   historyDiv.textContent = "";
   let hisArr = JSON.parse(localStorage.getItem("history"))
   for (const key in hisArr) {
-    console.log(key, " = ", hisArr[key])
     const para = document.createElement("p")
     para.textContent = `${key} =  ${hisArr[key]}`
     historyDiv.appendChild(para);
